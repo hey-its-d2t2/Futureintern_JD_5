@@ -3,8 +3,8 @@
 #
 #ENTRYPOINT ["top", "-b"]
 
-FROM maven: 3.6.3-openjdk-21 AS BUILD
-COPY ..
+FROM maven:3.6.3-openjdk-21 AS BUILD
+COPY . .
 RUN mn clean package -DskipTests
 
 FROM openjdk:21-3.6.3-slim
