@@ -76,9 +76,8 @@
 - **1 .Clone the Repository**
 
 ```
-git clone https://github.com/your-username/password-generator-plus-3.0.git
-cd password-generator-plus-3.0
-
+git clone https://github.com/hey-its-d2t2/Futureintern_JD_5.git
+cd Futureintern_JD_5
 ```
 -  **2. Set Up the Backend**
     - Navigate to the backend directory and build the Spring Boot application.
