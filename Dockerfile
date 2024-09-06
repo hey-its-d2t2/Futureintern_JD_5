@@ -8,6 +8,6 @@ COPY . .
 RUN mn clean package -DskipTests
 
 FROM openjdk:21-3.6.3-slim
-COPY --from=build /target/PasswordGenerator-00.01-SNAPSHOT.jar PasswordGenerator.jar
+COPY --from=build /out/artifacts/Futureintern_JD_5_jar/Futureintern-JD-5.jar PasswordGenerator.jar
 EXPOSE 8080
 ENTRYPOINT["java", "-jar","PasswordGenerator.jar"]
