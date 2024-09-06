@@ -21,12 +21,21 @@
 #FROM openjdk:17-slim
 #COPY --from=build /path/to/your/target/Futureintern-JD-5.jar PasswordGenerator.jar
 #EXPOSE 8080
+##ENTRYPOINT ["java", "-jar", "PasswordGenerator.jar"]
+#FROM maven:3.11-openjdk-21 AS build
+#COPY . .
+#RUN mvn clean package -DskipTests
+#
+#FROM openjdk:21-slim
+#COPY --from=build /out/artifacts/Futureintern_JD_5_jar/Futureintern-JD-5.jar PasswordGenerator.jar
+#EXPOSE 8080
 #ENTRYPOINT ["java", "-jar", "PasswordGenerator.jar"]
-FROM maven:3.11-openjdk-21 AS build
+
+FROM maven:3.6.3-openjdk-17 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
-FROM openjdk:21-slim
+FROM openjdk:17-slim
 COPY --from=build /out/artifacts/Futureintern_JD_5_jar/Futureintern-JD-5.jar PasswordGenerator.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "PasswordGenerator.jar"]
