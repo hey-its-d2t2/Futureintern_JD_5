@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.Futureintern_JD_5.FutureinternJd5ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.402 s -- in com.Futureintern_JD_5.FutureinternJd5ApplicationTests
