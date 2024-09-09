@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @Controller
-@RequestMapping("/password")
+@RequestMapping
 public class PasswordGeneratorController {
 
     private final PasswordGeneratorService passwordGeneratorService;
@@ -22,14 +22,13 @@ public class PasswordGeneratorController {
         this.passwordGeneratorService = passwordGeneratorService;
     }
 
-    // 1. Serve the password generator HTML page
+
     @GetMapping
     public String showPasswordGeneratorPage() {
-        return "passwordgenerator";  // Thymeleaf looks for 'passwordgenerator.html' in the /templates directory
+        return "passwordgenerator";
     }
 
-    // 2. Handle the form submission for generating passwords
-    @PostMapping("/generate")
+    @PostMapping("/password-generate")
     public String generatePasswords(@RequestParam("length") int length,
                                     @RequestParam("quantity") int quantity,
                                     @RequestParam(value = "includeNumbers", required = false, defaultValue = "false") boolean includeNumbers,
@@ -53,4 +52,5 @@ public class PasswordGeneratorController {
         // Return the same HTML page, but now with passwords displayed
         return "passwordgenerator";
     }
+
 }
