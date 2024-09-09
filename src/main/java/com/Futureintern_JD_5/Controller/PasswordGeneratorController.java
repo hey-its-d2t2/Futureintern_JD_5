@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @Controller
-@RequestMapping
+@RequestMapping("/password-generator")
 public class PasswordGeneratorController {
 
     private final PasswordGeneratorService passwordGeneratorService;
